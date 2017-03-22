@@ -20,10 +20,10 @@ S = zeros(n);
 %       number of examples).
 %
 
+% compute the covariance matrix
+Sigma=1/m .* X'*X;
 
-
-
-
+[U, S, V] = svd(Sigma);
 
 
 % =========================================================================

@@ -21,17 +21,14 @@ idx = zeros(size(X,1), 1);
 % Note: You can use a for-loop over the examples to compute this.
 %
 
-
-
-
 for i=1:size(X,1)
     length = zeros(size(centroids,1), 1);
     for j=1:size(centroids,1)
-        length(j) = sqrt((X(i,1)-centroids(j,1))^2 + (X(i,2)-centroids(j,2))^2);
+%         length(j) = sqrt((X(i,1)-centroids(j,1))^2 + (X(i,2)-centroids(j,2))^2);
+        length(j) = sqrt(sum(power((X(i,:) - centroids(j,:)),2)));
     end
     [val, idx(i)] = min(length);
 end
-
 
 % =============================================================
 

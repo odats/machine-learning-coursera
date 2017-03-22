@@ -21,6 +21,8 @@
 %% Initialization
 clear ; close all; clc
 
+set(0,'DefaultFigureWindowStyle','docked');
+
 %% ================== Part 1: Load Example Dataset  ===================
 %  We start this exercise by using a small dataset that is easily to
 %  visualize

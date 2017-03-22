@@ -26,20 +26,15 @@ centroids = zeros(K, n);
 % Note: You can use a for-loop over the centroids to compute this.
 %
 
-% totalX, totalY, count
-
-result = zeros(K, n+1);
+% sum the elements
 for i=1:size(idx,1)
-    result(idx(i),1) = result(idx(i),1) + X(i,1);
-    result(idx(i),2) = result(idx(i),2) + X(i,2);
-    result(idx(i),3) = result(idx(i),3) + 1; 
+    centroids(idx(i),:) = centroids(idx(i),:) + X(i,:);
 end
 
-for i=1:size(centroids,1)
-    centroids(i,1) = result(i,1) / result(i,3);
-    centroids(i,2) = result(i,2) / result(i,3);
+% devide by total occurences
+for i=1:K
+    centroids(i,:) = centroids(i,:)./(sum(idx(:) == i));
 end
-
 
 
 % =============================================================

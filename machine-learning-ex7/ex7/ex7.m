@@ -21,6 +21,8 @@
 %% Initialization
 clear ; close all; clc
 
+set(0,'DefaultFigureWindowStyle','docked');
+
 %% ================= Part 1: Find Closest Centroids ====================
 %  To help you implement K-Means, we have divided the learning algorithm 
 %  into two functions -- findClosestCentroids and computeCentroids. In this
@@ -132,7 +134,7 @@ max_iters = 10;
 initial_centroids = kMeansInitCentroids(X, K);
 
 % Run K-Means
-[centroids, idx] = runkMeans(X, initial_centroids, max_iters);
+[centroids, idx] = runkMeans(X, initial_centroids, max_iters, true);
 
 fprintf('Program paused. Press enter to continue.\n');
 pause;
